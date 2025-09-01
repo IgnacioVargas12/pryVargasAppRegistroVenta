@@ -1,8 +1,8 @@
 namespace pryVargasAppRegistroVenta
 {
-    public partial class RegistrarVenta : Form
+    public partial class frmRegistrarVenta : Form
     {
-        public RegistrarVenta()
+        public frmRegistrarVenta()
         {
             InitializeComponent();
         }

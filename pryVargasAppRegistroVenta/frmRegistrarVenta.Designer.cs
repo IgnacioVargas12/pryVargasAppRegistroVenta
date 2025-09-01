@@ -1,6 +1,6 @@
 ﻿namespace pryVargasAppRegistroVenta
 {
-    partial class RegistrarVenta
+    partial class frmRegistrarVenta
     {
         /// <summary>
         ///  Required designer variable.
@@ -37,6 +37,7 @@
             dtpFecha = new DateTimePicker();
             lstProducto = new ComboBox();
             btnRegistrar = new Button();
+            btnCancelar = new Button();
             SuspendLayout();
             // 
             // lblFecha
@@ -82,7 +83,7 @@
             // txtCantidad
             // 
             txtCantidad.Font = new Font("Segoe UI", 12F);
-            txtCantidad.Location = new Point(147, 154);
+            txtCantidad.Location = new Point(186, 154);
             txtCantidad.Name = "txtCantidad";
             txtCantidad.Size = new Size(76, 29);
             txtCantidad.TabIndex = 4;
@@ -98,16 +99,18 @@
             // dtpFecha
             // 
             dtpFecha.Font = new Font("Segoe UI", 12F);
-            dtpFecha.Location = new Point(125, 47);
+            dtpFecha.Format = DateTimePickerFormat.Short;
+            dtpFecha.Location = new Point(186, 47);
             dtpFecha.Name = "dtpFecha";
             dtpFecha.Size = new Size(200, 29);
             dtpFecha.TabIndex = 6;
             // 
             // lstProducto
             // 
+            lstProducto.DropDownStyle = ComboBoxStyle.DropDownList;
             lstProducto.Font = new Font("Segoe UI", 12F);
             lstProducto.FormattingEnabled = true;
-            lstProducto.Location = new Point(148, 95);
+            lstProducto.Location = new Point(186, 95);
             lstProducto.Name = "lstProducto";
             lstProducto.Size = new Size(130, 29);
             lstProducto.TabIndex = 7;
@@ -115,18 +118,29 @@
             // btnRegistrar
             // 
             btnRegistrar.Font = new Font("Segoe UI", 12F);
-            btnRegistrar.Location = new Point(420, 219);
+            btnRegistrar.Location = new Point(475, 218);
             btnRegistrar.Name = "btnRegistrar";
-            btnRegistrar.Size = new Size(83, 30);
+            btnRegistrar.Size = new Size(82, 30);
             btnRegistrar.TabIndex = 8;
             btnRegistrar.Text = "Registrar";
             btnRegistrar.UseVisualStyleBackColor = true;
             // 
-            // RegistrarVenta
+            // btnCancelar
+            // 
+            btnCancelar.Font = new Font("Segoe UI", 12F);
+            btnCancelar.Location = new Point(376, 218);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(82, 30);
+            btnCancelar.TabIndex = 9;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // frmRegistrarVenta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(617, 316);
+            ClientSize = new Size(617, 292);
+            Controls.Add(btnCancelar);
             Controls.Add(btnRegistrar);
             Controls.Add(lstProducto);
             Controls.Add(dtpFecha);
@@ -136,7 +150,7 @@
             Controls.Add(lblCantidad);
             Controls.Add(lblProducto);
             Controls.Add(lblFecha);
-            Name = "RegistrarVenta";
+            Name = "frmRegistrarVenta";
             Text = "Registrar venta";
             ResumeLayout(false);
             PerformLayout();
@@ -153,5 +167,6 @@
         private DateTimePicker dtpFecha;
         private ComboBox lstProducto;
         private Button btnRegistrar;
+        private Button btnCancelar;
     }
 }
