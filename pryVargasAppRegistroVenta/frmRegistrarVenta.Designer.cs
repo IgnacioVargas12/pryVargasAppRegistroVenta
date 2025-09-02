@@ -38,6 +38,7 @@
             btnCancelar = new Button();
             nudCantidad = new NumericUpDown();
             mtbPrecioUnitario = new MaskedTextBox();
+            lblResultadoRegistro = new Label();
             ((System.ComponentModel.ISupportInitialize)nudCantidad).BeginInit();
             SuspendLayout();
             // 
@@ -92,6 +93,7 @@
             // 
             // lstProducto
             // 
+            lstProducto.DropDownStyle = ComboBoxStyle.DropDownList;
             lstProducto.Font = new Font("Segoe UI", 12F);
             lstProducto.FormattingEnabled = true;
             lstProducto.Location = new Point(186, 95);
@@ -110,6 +112,7 @@
             btnRegistrar.TabIndex = 8;
             btnRegistrar.Text = "Registrar";
             btnRegistrar.UseVisualStyleBackColor = true;
+            btnRegistrar.Click += btnRegistrar_Click;
             // 
             // btnCancelar
             // 
@@ -137,17 +140,29 @@
             mtbPrecioUnitario.Enabled = false;
             mtbPrecioUnitario.Font = new Font("Segoe UI", 12F);
             mtbPrecioUnitario.Location = new Point(186, 203);
-            mtbPrecioUnitario.Mask = "00000000$";
+            mtbPrecioUnitario.Mask = "00000000";
             mtbPrecioUnitario.Name = "mtbPrecioUnitario";
             mtbPrecioUnitario.Size = new Size(100, 29);
             mtbPrecioUnitario.TabIndex = 11;
             mtbPrecioUnitario.TextChanged += mtbPrecioUnitario_TextChanged;
             // 
+            // lblResultadoRegistro
+            // 
+            lblResultadoRegistro.AutoSize = true;
+            lblResultadoRegistro.BorderStyle = BorderStyle.Fixed3D;
+            lblResultadoRegistro.Font = new Font("Segoe UI", 12F);
+            lblResultadoRegistro.Location = new Point(69, 256);
+            lblResultadoRegistro.Name = "lblResultadoRegistro";
+            lblResultadoRegistro.Size = new Size(30, 23);
+            lblResultadoRegistro.TabIndex = 12;
+            lblResultadoRegistro.Text = "---";
+            // 
             // frmRegistrarVenta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(617, 292);
+            ClientSize = new Size(617, 345);
+            Controls.Add(lblResultadoRegistro);
             Controls.Add(mtbPrecioUnitario);
             Controls.Add(nudCantidad);
             Controls.Add(btnCancelar);
@@ -160,6 +175,7 @@
             Controls.Add(lblFecha);
             Name = "frmRegistrarVenta";
             Text = "Registrar venta";
+            Load += frmRegistrarVenta_Load;
             ((System.ComponentModel.ISupportInitialize)nudCantidad).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -177,5 +193,6 @@
         private Button btnCancelar;
         private NumericUpDown nudCantidad;
         private MaskedTextBox mtbPrecioUnitario;
+        private Label lblResultadoRegistro;
     }
 }

@@ -6,6 +6,14 @@ namespace pryVargasAppRegistroVenta
         {
             InitializeComponent();
         }
+        //Declaramos variables aqui para que sean globales en el formulario, tambien las inicializamos
+
+        DateTime vFecha = DateTime.Now;
+        string vProducto = "";
+        int vCantidad = 0;
+        int vPrecio = 0;
+
+
 
         private void lstProducto_TextChanged(object sender, EventArgs e)
         { //este procedimiento valida que primero se elija un producto para habilitar el NumericalUpDown
@@ -53,6 +61,39 @@ namespace pryVargasAppRegistroVenta
             nudCantidad.Value = 0;
 
             mtbPrecioUnitario.Text = "";
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            //otorgamos valores a las variables y despues mostramos en lblRegistro
+
+            vFecha = dtpFecha.Value;
+            vProducto = lstProducto.Text;
+            //convierte nudCantidad a un numero entero
+            vCantidad = Convert.ToInt32 (nudCantidad.Value);
+            //convierte mtbPrecioUnitario a un numero entero
+            vPrecio = Convert.ToInt32(mtbPrecioUnitario.Text);
+
+            lblResultadoRegistro.Text += vFecha + " " + vProducto + " " + vCantidad + " " + vPrecio;
+
+            dtpFecha.Value = DateTime.Now;
+
+            lstProducto.Text = "";
+            lstProducto.SelectedIndex = -1;
+
+            nudCantidad.Value = 0;
+
+            mtbPrecioUnitario.Text = "";
+
+        }
+
+        private void frmRegistrarVenta_Load(object sender, EventArgs e)
+        {
+            //Load indica que ocurre antes que se muestre el formulario
+            //este evento agrega nuevos items a lstProducto
+            lstProducto.Items.Add("Gabinete");
+            lstProducto.Items.Add("CPU");
+            lstProducto.Items.Add("RAM");
         }
     }
 }
