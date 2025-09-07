@@ -53,14 +53,7 @@ namespace pryVargasAppRegistroVenta
 
         private void btnCancelar_Click(object sender, EventArgs e)
         { //este procedimiento limpia todos elementos de la interfaz grafica
-            dtpFecha.Value = DateTime.Now;
-
-            lstProducto.Text = "";
-            lstProducto.SelectedIndex = -1;
-
-            nudCantidad.Value = 0;
-
-            mtbPrecioUnitario.Text = "";
+            LimpiarControles();
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -74,16 +67,11 @@ namespace pryVargasAppRegistroVenta
             //convierte mtbPrecioUnitario a un numero entero
             vPrecio = Convert.ToInt32(mtbPrecioUnitario.Text);
 
-            lblResultadoRegistro.Text += vFecha + " " + vProducto + " " + vCantidad + " " + vPrecio;
+            //mostramos en la lbl resultado el pedido
+            lblResultadoRegistro.Text += vFecha + " " + vProducto + " " + vCantidad + " " + vPrecio + '\n';
 
-            dtpFecha.Value = DateTime.Now;
-
-            lstProducto.Text = "";
-            lstProducto.SelectedIndex = -1;
-
-            nudCantidad.Value = 0;
-
-            mtbPrecioUnitario.Text = "";
+            //limpiamos los controles
+            LimpiarControles();
 
         }
 
@@ -94,6 +82,18 @@ namespace pryVargasAppRegistroVenta
             lstProducto.Items.Add("Gabinete");
             lstProducto.Items.Add("CPU");
             lstProducto.Items.Add("RAM");
+        }
+        private void LimpiarControles ()
+        {
+            dtpFecha.Value = DateTime.Now;
+
+            lstProducto.Text = "";
+            lstProducto.SelectedIndex = -1;
+
+            nudCantidad.Value = 0;
+
+            mtbPrecioUnitario.Text = "";
+
         }
     }
 }
