@@ -6,12 +6,27 @@ namespace pryVargasAppRegistroVenta
         {
             InitializeComponent();
         }
+
+
+        //Declaración de Struct
+        public struct datoVentas 
+        {
+        public DateTime Fecha;
+        public string Producto;
+        public int Cantidad;
+        public int Precio;
+        }
+
+        //Declaración de array principal
+        public datoVentas[] vecDatos = new datoVentas [100];
+
         //Declaramos variables aqui para que sean globales en el formulario, tambien las inicializamos
 
         DateTime vFecha = DateTime.Now;
         string vProducto = "";
         int vCantidad = 0;
         int vPrecio = 0;
+        int indice = 0;
 
 
 
@@ -69,6 +84,13 @@ namespace pryVargasAppRegistroVenta
 
             //mostramos en la lbl resultado el pedido
             lblResultadoRegistro.Text += vFecha + " " + vProducto + " " + vCantidad + " " + vPrecio + '\n';
+
+            //Grabamos datos en el array
+            vecDatos[indice].Fecha = vFecha;
+            vecDatos[indice].Cantidad = vCantidad;
+            vecDatos[indice].Producto = vProducto;
+            vecDatos[indice].Precio = vPrecio;
+            indice++;
 
             //limpiamos los controles
             LimpiarControles();
